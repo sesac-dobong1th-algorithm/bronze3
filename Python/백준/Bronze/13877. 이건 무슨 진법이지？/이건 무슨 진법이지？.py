@@ -19,3 +19,9 @@ for i in each_line_info:
     K, numbers = i.split()
     
     print(int(K), int(to_8(numbers)), int(numbers), int(to_16(numbers)))
+
+
+
+# 발생한 에러로 마지막 출력값의 형태가 str로 된 것들이 있어서 자꾸
+# 에러가 발생했다... 문제를 잘읽자..
+# 그리고 더하여 발생한 에러로 오타가 있었다...
