@@ -9,7 +9,7 @@ for m in range(2,10**9+1):
         k = max(set(t_list), key = t_list.count)
         
        
-        count = t_list.count(k)  # 여기서 t_list가 아니라, num_list로 잘못 씀... 실수...
+        count = t_list.count(k)  
        
         if count >= n/2 and m > k:
                 print(m, k)
