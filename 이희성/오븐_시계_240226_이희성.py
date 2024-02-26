@@ -12,6 +12,6 @@
 
 a, b = map(int, input().split())  # 첫줄에 주어지는 두 숫자를 a,b에 할당
 c = int(input())  # 둘째줄에 주어지는 숫자를 c에 할당
-minute = (b + c) % 60  # 분 출력값을 계산
-hour = (a + (b + c) // 60) % 24    
+minute = (b + c) % 60  # 분 출력값을 계산 > 0~59
+hour = (a + (b + c) // 60) % 24  # 시 출력값을 계산 > 0~23
 print(hour,minute)
