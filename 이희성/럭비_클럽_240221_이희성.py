@@ -9,3 +9,4 @@ while True:  # 무한루프를 실행
         print(f'{profile_name} Senior')
     else:  # 문제에 주어진 성인부 조건을 만족하지 못하면 이름 Senior을 출력
         print(f'{profile_name} Junior')
+        
