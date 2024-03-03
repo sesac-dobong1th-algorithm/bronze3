@@ -35,3 +35,15 @@ elif 6 <= t < 30:
 else:
     dic_count['C'] = t
     print(dic_count['A'], dic_count['B'], dic_count['C'])
+
+# 담임강사님 피드백 후 아래와 같이 코드 수정
+
+T = int(input())  # 요리시간
+list_timer = [300, 60, 10]  # 초 단위로 통일한 타이머들의 시간
+list_count = []  # 최소버튼 조작 횟수  
+
+# 최소버튼 조작 횟수 계산, 계산이 불가할 때는 -1를 출력
+for timer in list_timer:      
+    count, T = divmod(T, timer)
+    list_count.append(count)
+print(*list_count) if T == 0 else print(-1)
