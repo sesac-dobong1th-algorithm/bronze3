@@ -26,3 +26,5 @@ elif a == b*c:
 elif a == b//c:
     print(f"{a}={b}/{c}")
 
+    # 다시 시도
+
