@@ -7,8 +7,7 @@ for i in range(int(input())):
     words.append(input())
 
 # 중복된 단어 제거 후, 사전 순 정렬 후, 길이 순으로 정렬
-set_words = set(words)
-list_words = list(set_words)
+list_words = list(set(words))
 list_words.sort()
 list_words.sort(key=len)
 print(*list_words, sep='\n')
