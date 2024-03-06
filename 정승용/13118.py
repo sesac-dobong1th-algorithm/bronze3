@@ -32,9 +32,11 @@
 m = list(map(int, input().split()))  # 사람 좌표 저장
 
 x, y, r = map(int, input().split())  # x,y 좌표 r 저장
-if x in m:  # m안에 x가 포함되어 있으면
-    result = m.index(x) + 1  # result에 x가 있는 인덱스 번호에 1을 더해서 저장
-else:  # m안에 x가 없으면
-    result = 0  # result에 0을 저장
+# if x in m:  # m안에 x가 포함되어 있으면
+#     print(m.index(x) + 1)  # result에 x가 있는 인덱스 번호에 1을 더해서 저장
+# else:  # m안에 x가 없으면
+#     print(0)  # result에 0을 저장
 
-print(result)
+# 조건표현식
+# True인 경우 실행 if 조건 else False인 경우 실행
+print(m.index(x) + 1) if (x in m) else print(0)
