@@ -50,7 +50,6 @@ for i in range(len(a)):
         a[i] = a[i].capitalize()  # 첫문자 대문자로
         # print(a[i])
         new += re.sub(  # 아래 조건에 포함된 단어 대문자로
-            # r"([.!?)(])(\s)(\w)|([.!?)(])(\w)|((\\n)[.!?)(])(\s)(\w)|((\\n)[.!?)(])(\w)",
             r"([.!?()]\s*(\w)|[.!?()](\w))",
             lambda n: n.group().upper(),
             a[i],
@@ -70,12 +69,3 @@ for i in range(len(a)):
 
 new = new.replace("\n", " ")
 print(new)
-
-# s = sys.stdin.readline()  #  문장 입력
-# s = s.lower()  # 전체 문장 소문자로
-# s = re.sub(
-# r"(?<=[.!?,)(}{\]\[''\\]\s)(\w)|[.!?,)(}{\]\[''\\](\w)|\n[.!?,)(}{\]\[''\\]\s(\w)|\n[.!?,)(}{\]\[''\\](\w)|[.!?,)(}{\]\[''\\]\s\n(\w)|[.!?,)(}{\]\[''\\]\n(\w)|\n(\w)",
-# lambda s: s.group().upper(),
-# s,
-# )
-# print(s)
