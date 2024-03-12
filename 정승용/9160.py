@@ -37,8 +37,45 @@
 import re
 import sys
 
+new = ""
 
-s = sys.stdin.readline().rstrip()  #  문장 입력
-s = s.lower()  # 전체 문장 소문자로
-s = re.sub(r"(?<=[.!?,()]\s)|[.!?,()](\w)", lambda s: s.group().upper(), s)
-print(s)
+a = sys.stdin.readlines()  # 여러 문자열 라인 받기 위함
+# print(a)
+flag_cap = False  # 케이스 분리
+for i in range(len(a)):
+    a[i] = a[i].lower()  # 일단 싹 소문자로
+    # print(a[i][:])
+
+    if flag_cap == True:  # flag_cap이 True일 때
+        a[i] = a[i].capitalize()  # 첫문자 대문자로
+        # print(a[i])
+        new += re.sub(  # 아래 조건에 포함된 단어 대문자로
+            # r"([.!?)(])(\s)(\w)|([.!?)(])(\w)|((\\n)[.!?)(])(\s)(\w)|((\\n)[.!?)(])(\w)",
+            r"([.!?()]\s*(\w)|[.!?()](\w))",
+            lambda n: n.group().upper(),
+            a[i],
+        )
+        flag_cap = False  # flag_cap False로 초기화
+    else:  # flag_cap False일 때
+        new += re.sub(
+            r"([.!?()]\s*(\w)|[.!?()](\w))",
+            lambda n: n.group().upper(),
+            a[i],
+        )
+        if re.search(r"[.!?()](\n)", a[i]):  # .!?()다음 \n가 바로 올때
+            flag_cap = True  # flag_cap을 True로
+        else:
+            flag_cap = False
+
+
+new = new.replace("\n", " ")
+print(new)
+
+# s = sys.stdin.readline()  #  문장 입력
+# s = s.lower()  # 전체 문장 소문자로
+# s = re.sub(
+# r"(?<=[.!?,)(}{\]\[''\\]\s)(\w)|[.!?,)(}{\]\[''\\](\w)|\n[.!?,)(}{\]\[''\\]\s(\w)|\n[.!?,)(}{\]\[''\\](\w)|[.!?,)(}{\]\[''\\]\s\n(\w)|[.!?,)(}{\]\[''\\]\n(\w)|\n(\w)",
+# lambda s: s.group().upper(),
+# s,
+# )
+# print(s)
