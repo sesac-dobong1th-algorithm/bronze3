@@ -1,9 +1,9 @@
-# 수정된 코드를 실행하여 올바른 출력 결과 확인
-output_corrected = []
-for i in range(9,0,-2):
-    output_corrected.append('{:^10}'.format('*'*i))
+N = int(input())
+    # 상단 부분: 별의 개수가 점점 줄어듦
+for i in range(N):
+    print(' ' * i + '*' * (2*(N-i)-1))
 
-for i in range(3,11,2):
-    output_corrected.append('{:^10}'.format('*'*i))
-
-output_corrected
+# 하단 부분: 별의 개수가 점점 늘어남
+for i in range(1, N):
+    print(' ' * (N-i-1) + '*' * (2*i+1))
+    
