@@ -24,10 +24,10 @@
 n, k, s = map(int, input().split())
 ks = k * s  # 필요한 전체 나사 수
 a = list(map(int, input().split()))  # 상자에 들어있는 나사 수
-a = sorted(a, reverse=True)  # 큰것부터 정렬
+a.sort(reverse=True)
 
-for i in range(len(a)):  # a번 반복
-    ks = ks - a[i]  # 들어있는 나사 수만큼 뺀다
+for i in range(n):  # n번 반복
+    ks -= a[i]  # 들어있는 나사 수만큼 뺀다
     if ks <= 0:  # 필요 나사수가 0이거나 0보다 작을 때
         print(len(a[: i + 1]))  # 결과 출력
         break
