@@ -14,4 +14,3 @@ for _ in range(m) :
 # print(cup)
 ## 공이 위치한 컵의 번호를 출력(인덱스는 0부터 시작하므로, 출력 시 +1)
 print(cup.index(1)+1)
-
